@@ -1,0 +1,13 @@
+# Local Python & Virtualenv
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+
+# Local development DB (CMS commits settings.json for Netlify)
+data/gym_cms.db
+
+# OS files
+.DS_Store
+Thumbs.db

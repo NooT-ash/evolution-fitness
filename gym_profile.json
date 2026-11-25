@@ -1,0 +1,311 @@
+{
+  "business": {
+    "name": "Evolution Fitness",
+    "legal_name": "Evolution Fitness Pune",
+    "tagline": "Transform Your Body, Evolve Your Mind",
+    "category": "Unisex Fitness Center & Gym",
+    "rating": 4.9,
+    "review_count": 131,
+    "rating_source": "Google Reviews & Justdial",
+    "established_year": 2021,
+    "is_women_owned": true,
+    "is_unisex": true,
+    "coordinates": {
+      "latitude": 18.5974754,
+      "longitude": 73.9124515
+    },
+    "plus_code": "HWW6+XX Pune, Maharashtra",
+    "address": {
+      "survey_number": "Sr. No. 281",
+      "street": "Lohegaon-Dhanori Road",
+      "locality": "Sathe Nagar, Lohegaon / Dhanori",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411047",
+      "landmark": "Near HP Petrol Pump",
+      "full_display_address": "Sr. No. 281, Lohegaon-Dhanori Road, Near HP Petrol Pump, Sathe Nagar, Lohegaon, Pune, Maharashtra 411047"
+    }
+  },
+  "contact": {
+    "reception_phone": "+91 93707 37887",
+    "primary_phone": "+91 89287 44136",
+    "whatsapp": "+918928744136",
+    "justdial_line": "07947425758",
+    "whatsapp_message_link": "https://wa.me/918928744136?text=Hi%20Evolution%20Fitness%2C%20I%20am%20interested%20in%20a%20gym%20membership%20trial.",
+    "social": {
+      "instagram": {
+        "handle": "@evolution_fitness_pune",
+        "url": "https://www.instagram.com/evolution_fitness_pune/?hl=en",
+        "followers": 320,
+        "posts": 107
+      },
+      "google_maps": {
+        "share_url": "https://share.google/2u4MYM5YeBA0cTcPw",
+        "kgmid": "/g/11xs7nbh55"
+      },
+      "justdial": {
+        "url": "https://www.justdial.com/Pune/Evolution-Fitness-Near-Hp-Petrol-Pump-Lohegaon/020PXX20-XX20-260312191918-H3N1_BZDET"
+      }
+    }
+  },
+  "hours": {
+    "monday": "06:00 AM – 10:00 PM",
+    "tuesday": "06:00 AM – 10:00 PM",
+    "wednesday": "06:00 AM – 10:00 PM",
+    "thursday": "06:00 AM – 10:00 PM",
+    "friday": "06:00 AM – 10:00 PM",
+    "saturday": "06:00 AM – 10:00 PM",
+    "sunday": "06:00 AM – 10:00 PM",
+    "summary": "Open 7 Days a Week (6:00 AM – 10:00 PM), 365 Days"
+  },
+  "team": [
+    {
+      "name": "Mr. Atul Sir",
+      "role": "Founder & Owner",
+      "bio": "Known for his kind, supportive, and community-first leadership. Dedicated to providing world-class fitness equipment and a welcoming environment for all members."
+    },
+    {
+      "name": "Manoj Sir",
+      "role": "Head Certified Personal Trainer & Coach",
+      "instagram": "@manoj_w_lift",
+      "specialization": "Bodybuilding, Hypertrophy, Form Correction, Powerlifting, Transformation Coaching",
+      "highlight": "Recognized in dozens of member reviews for patience, deep knowledge, and results-driven 1-on-1 coaching."
+    },
+    {
+      "name": "Pradeep Jadhav",
+      "role": "Athlete & Fitness Coach",
+      "instagram": "@the_rising_pj",
+      "specialization": "Functional Training, Conditioning, Athletic Performance"
+    }
+  ],
+  "programs": [
+    {
+      "id": "strength-hypertrophy",
+      "title": "Strength & Muscle Building",
+      "description": "Heavy duty free weights, Olympic barbells, plate-loaded machines, and custom resistance setups designed to build raw power and lean muscle.",
+      "image": "assets/images/strength_deadlift.jpg"
+    },
+    {
+      "id": "cardio-fatloss",
+      "title": "Cardio & Turf Conditioning Zone",
+      "description": "Commercial treadmills, cross trainers, cycles, and a green grass turf lane for sled work, lunges, and high-calorie burn conditioning.",
+      "image": "assets/images/cardio_turf.jpg"
+    },
+    {
+      "id": "personal-training",
+      "title": "1-on-1 Personal Training",
+      "description": "Tailored training regimens, dedicated form scrutiny, progressive overload tracking, and daily accountability led by certified trainers like Manoj Sir.",
+      "image": "assets/images/personal_training.jpg"
+    },
+    {
+      "id": "zumba-dance",
+      "title": "High-Energy Zumba Classes",
+      "description": "Fun, high-calorie-burning dance workouts set to upbeat music that make cardio exhilarating and accessible for all fitness levels.",
+      "image": "assets/images/zumba_class.jpg"
+    },
+    {
+      "id": "yoga-flexibility",
+      "title": "Yoga & Mobility Sessions",
+      "description": "Mind-body recovery, mobility routines, breathwork, and posture correction to prevent injury and relieve stress.",
+      "image": "assets/images/yoga_stretch.jpg"
+    },
+    {
+      "id": "abs-core",
+      "title": "Dedicated ABS & Core Batches",
+      "description": "Targeted abdominal, obliques, and core stability bootcamps to sculpt definition and enhance posture.",
+      "image": "assets/images/boxing_crossfit.jpg"
+    },
+    {
+      "id": "steam-bath",
+      "title": "Steam Bath & Muscle Recovery",
+      "description": "Post-workout relaxation, detoxifying sweat sessions, and accelerated muscle recovery in clean steam facilities.",
+      "image": "assets/images/steam_bath_spa.jpg"
+    },
+    {
+      "id": "custom-diet",
+      "title": "Custom Nutrition & Diet Plans",
+      "description": "Personalized macro and calorie meal plans tailored for weight loss, lean muscle gain, or lifestyle management.",
+      "image": "assets/images/nutrition_diet.jpg"
+    }
+  ],
+  "amenities": [
+    "Unisex Gym Floor with Zero-Intimidation Vibe",
+    "Spacious Cardio Turf Lane",
+    "Heavy Dumbbells & Free Weights Section",
+    "Modern Biomechanical Resistance Machines",
+    "Dedicated Boxing Bag & Combat Bay",
+    "Aesthetic Strip Ceiling LED Lighting",
+    "Steam Bath Recovery Suites",
+    "Changing Rooms & Personal Lockers",
+    "Certified Trainers on Floor at All Times",
+    "Ample Bike & Car Parking (Near HP Petrol Pump)",
+    "UPI / Cash / Card Payment Accepted"
+  ],
+  "sample_membership_plans": [
+    {
+      "name": "Monthly Starter",
+      "period": "1 Month",
+      "price": "₹1,500 - ₹2,000",
+      "features": ["Full Gym Floor Access", "Cardio & Free Weights", "Locker Room Access", "General Trainer Support"]
+    },
+    {
+      "name": "Quarterly Momentum",
+      "period": "3 Months",
+      "price": "₹4,000 - ₹5,000",
+      "popular": true,
+      "features": ["Full Gym Access", "Zumba & ABS Batch Access", "Free Workout Chart", "Steam Bath Access"]
+    },
+    {
+      "name": "Annual Transformation",
+      "period": "12 Months",
+      "price": "₹10,000 - ₹12,000",
+      "best_value": true,
+      "features": ["365 Days Access", "Diet & Nutrition Guidance", "Steam Bath Access", "Zumba & Yoga Classes", "Trainer Assessment"]
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Gaurav Sharma",
+      "rating": 5,
+      "date": "Recent",
+      "source": "Google Review",
+      "quote": "I recently joined Evolution Fitness and I am really happy with my experience. The trainers, especially Manoj Sir, is very knowledgeable, supportive and always ready to help. He guided me with proper workout form and routine. Gym environment is positive and motivating. Clean and well maintained equipment. Highly recommended!"
+    },
+    {
+      "name": "Pooja Bhalke",
+      "rating": 5,
+      "date": "Recent",
+      "source": "Google Review",
+      "quote": "Evolution fitness is a fantastic place to work out. The gym is clean, well maintained, and has all the necessary equipment. The atmosphere is energetic and motivating. What really makes the difference is the staff and trainers-they are friendly, approachable, and always ready to help with guidance and tips. The owner Mr. Atul Sir is very kind and supportive nature. Highly recommend this gym to anyone looking to start or continue their fitness journey!"
+    },
+    {
+      "name": "Darshan Thakur",
+      "rating": 5,
+      "date": "Recent",
+      "source": "Google Review",
+      "quote": "Great atmosphere, well-maintained equipment, and supportive trainers who keep you motivated. A great place to achieve your fitness goals! If anyone is looking for personal training, you can definitely connect with Manoj Sir. He is an exceptional trainer with deep fitness knowledge, gives personal attention, and makes every workout effective."
+    },
+    {
+      "name": "Abhay Thakur",
+      "rating": 5,
+      "date": "Recent",
+      "source": "Google Review",
+      "quote": "One of the best gym in Pune and well maintain all equipments and trainers is very friendly Manoj sir and gym owner is very helpful so must visit here."
+    },
+    {
+      "name": "Saurav Singh",
+      "rating": 5,
+      "date": "Recent",
+      "source": "Google Review",
+      "quote": "Evolution Fitness Gym is an absolute powerhouse of motivation! From top-tier equipment to an energetic vibe, it pushes you to bring your best every day. The trainers are supportive, knowledgeable, and genuinely invested in your progress. If you're looking for real results and a place that feels like a fitness family, this is it!"
+    }
+  ],
+  "media_assets": {
+    "branding": {
+      "logo_svg": "assets/images/logo.svg"
+    },
+    "authentic_gym_photos": [
+      {
+        "file": "assets/images/cardio_turf.jpg",
+        "title": "Cardio Studio & Treadmills",
+        "description": "Multi-station treadmill bank positioned on artificial green grass turf."
+      },
+      {
+        "file": "assets/images/weight_lifting_bay.jpg",
+        "title": "Central Weight Lifting Bay",
+        "description": "Spacious barbell racks and rubber flooring for heavy power movements."
+      },
+      {
+        "file": "assets/images/strength_machines.jpg",
+        "title": "Strength & Resistance Machines",
+        "description": "Ergonomic pin-loaded and plate-loaded isolation machines."
+      },
+      {
+        "file": "assets/images/gym_hall_lighting.jpg",
+        "title": "Gym Hall & LED Ambiance",
+        "description": "Modern industrial aesthetic with crisp overhead strip lighting."
+      },
+      {
+        "file": "assets/images/boxing_crossfit.jpg",
+        "title": "Boxing & Cross-Training Corner",
+        "description": "Punching bag, agility equipment, and core zone."
+      },
+      {
+        "file": "assets/images/athlete_achievement.jpg",
+        "title": "Athlete Glory Wall",
+        "description": "Trophy showcase and competitive bodybuilders trained at the facility."
+      },
+      {
+        "file": "assets/images/bodybuilding_physique.jpg",
+        "title": "Physique Showcase",
+        "description": "Demonstrating competition-level conditioning achieved at the gym."
+      },
+      {
+        "file": "assets/images/battle_ropes_thumb.jpg",
+        "title": "High Intensity Functional Training",
+        "description": "Heavy battle ropes and HIIT conditioning."
+      }
+    ],
+    "high_res_curated_assets": [
+      {
+        "file": "assets/images/hero_gym_dark.jpg",
+        "title": "Hero Background - Atmospheric Gym",
+        "use": "Main landing page hero backdrop"
+      },
+      {
+        "file": "assets/images/hero_workout.jpg",
+        "title": "Hero Secondary - Athletes in Action",
+        "use": "About section or call to action"
+      },
+      {
+        "file": "assets/images/personal_training.jpg",
+        "title": "1-on-1 Personal Training Coaching",
+        "use": "Personal Training service card"
+      },
+      {
+        "file": "assets/images/zumba_class.jpg",
+        "title": "High Energy Zumba Class",
+        "use": "Zumba & group fitness section"
+      },
+      {
+        "file": "assets/images/yoga_stretch.jpg",
+        "title": "Mindful Yoga & Mobility",
+        "use": "Yoga & recovery section"
+      },
+      {
+        "file": "assets/images/steam_bath_spa.jpg",
+        "title": "Steam Bath & Wellness",
+        "use": "Steam bath amenities feature"
+      },
+      {
+        "file": "assets/images/nutrition_diet.jpg",
+        "title": "Custom Nutrition & Meal Prep",
+        "use": "Diet plans service card"
+      },
+      {
+        "file": "assets/images/strength_deadlift.jpg",
+        "title": "Powerlifting & Heavy Lifting",
+        "use": "Strength program card"
+      }
+    ]
+  },
+  "seo_metadata": {
+    "title": "Evolution Fitness | Best Unisex Gym in Lohegaon & Dhanori, Pune",
+    "description": "Join Evolution Fitness in Lohegaon, Pune (Near HP Petrol Pump). Rated 4.9 Stars! Offering Personal Training, Zumba, Yoga, Steam Bath, Cardio, Strength & Custom Diet Plans. Open 7 days a week.",
+    "keywords": [
+      "Evolution Fitness",
+      "Gym in Lohegaon",
+      "Gym near HP petrol pump Lohegaon",
+      "Best gym Dhanori Pune",
+      "Personal trainer Manoj sir Lohegaon",
+      "Zumba classes Lohegaon Pune",
+      "Steam bath gym Pune",
+      "Unisex fitness club Pune 411047"
+    ],
+    "open_graph": {
+      "og_title": "Evolution Fitness - Evolve Your Body & Mind | Lohegaon, Pune",
+      "og_description": "4.9★ Rated Gym with world-class equipment, certified coaches, Zumba, and steam bath in Lohegaon-Dhanori Road.",
+      "og_image": "assets/images/hero_gym_dark.jpg"
+    }
+  }
+}

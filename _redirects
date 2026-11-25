@@ -1,0 +1,5 @@
+# Evolution Fitness Netlify Routing & Backend Proxy
+/admin  /admin.html  200
+
+# Optional: When your free Render backend is deployed, uncomment the line below to proxy API requests:
+# /api/*  https://YOUR-BACKEND.onrender.com/api/:splat  200
