@@ -24,12 +24,12 @@
     "reception_phone": "+91 93707 37887",
     "announcement_active": "true",
     "announcement_text": "DEMO Open 7 Days a Week: 6:00 AM – 10:00 PM | Dhanori-Lohegaon Rd (Nr HP Petrol Pump)",
-    "starter_plan_price": "499",
+    "starter_plan_price": "2499",
     "starter_plan_period": "month",
-    "momentum_plan_price": "999",
+    "momentum_plan_price": "5999",
     "momentum_plan_period": "3 months",
-    "vip_plan_price": "5,999",
+    "vip_plan_price": "7,999",
     "vip_plan_period": "year"
   },
-  "updated_at": "2026-11-26T08:43:59.815Z"
+  "updated_at": "2026-11-26T08:54:18.435Z"
 }
