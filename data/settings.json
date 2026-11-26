@@ -23,7 +23,7 @@
     "img_slot_program_6": "assets/images/nutrition_diet.jpg",
     "reception_phone": "+91 93707 37887",
     "announcement_active": "true",
-    "announcement_text": "Open 7 Days a Week: 6:00 AM – 10:00 PM | Dhanori-Lohegaon Rd (Nr HP Petrol Pump) DEMO@",
+    "announcement_text": "Open 7 Days a Week: 6:00 AM – 10:00 PM | Dhanori-Lohegaon Rd (Nr HP Petrol Pump) DEMO@#",
     "starter_plan_price": "499",
     "starter_plan_period": "month",
     "momentum_plan_price": "999",
@@ -31,5 +31,5 @@
     "vip_plan_price": "5,999",
     "vip_plan_period": "year"
   },
-  "updated_at": "2026-11-26T08:26:25.173Z"
+  "updated_at": "2026-11-26T08:41:08.240Z"
 }
