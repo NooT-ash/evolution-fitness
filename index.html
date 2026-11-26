@@ -157,24 +157,28 @@
   <div id="home" class="min-h-screen flex flex-col bg-light-surface">
 
     <!-- Top Announcement Bar -->
-    <div id="top-announcement-bar" class="bg-light-inverse-surface text-light-inverse-on-surface border-b border-dark-outline-variant py-2 px-page-margin text-center text-xs tracking-wide">
-      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-        <span class="flex items-center gap-2 mx-auto sm:mx-0">
-          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span id="top-announcement-text">Open 7 Days a Week: <strong>6:00 AM – 10:00 PM</strong> | Dhanori-Lohegaon Rd (Nr HP Petrol Pump)</span>
-        </span>
-        <div class="hidden sm:flex items-center gap-3 text-dark-on-surface-variant font-label text-label-sm">
-          <a href="tel:+919370737887" id="top-reception-link" class="hover:text-cobalt-tint transition-colors flex items-center gap-1" title="Reception & Front Desk">
+    <div id="top-announcement-bar" class="bg-light-inverse-surface text-light-inverse-on-surface border-b border-dark-outline-variant py-2 px-page-margin text-xs tracking-wide overflow-hidden">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        
+        <!-- Left: Announcement Message -->
+        <div class="flex items-center gap-2 min-w-0 flex-1 justify-center sm:justify-start">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+          <span id="top-announcement-text" class="truncate font-medium text-xs text-white" title="Open 7 Days a Week: 6:00 AM – 10:00 PM | Dhanori-Lohegaon Rd (Nr HP Petrol Pump)">Open 7 Days a Week: <strong>6:00 AM – 10:00 PM</strong> | Dhanori-Lohegaon Rd (Nr HP Petrol Pump)</span>
+        </div>
+
+        <!-- Right: Contact & Quick Links -->
+        <div class="hidden sm:flex items-center gap-2.5 md:gap-3 text-dark-on-surface-variant font-label text-label-sm shrink-0 whitespace-nowrap">
+          <a href="tel:+919370737887" id="top-reception-link" class="hover:text-cobalt-tint transition-colors flex items-center gap-1 shrink-0" title="Reception & Front Desk">
             <span class="material-symbols-outlined text-sm text-cobalt-tint">support_agent</span>
-            <span>Reception: <strong id="top-reception-num">93707 37887</strong></span>
+            <span class="whitespace-nowrap">Reception: <strong id="top-reception-num">93707 37887</strong></span>
           </a>
-          <span>•</span>
-          <a href="tel:+918928744136" id="top-direct-link" class="hover:text-cobalt-tint transition-colors flex items-center gap-1" title="Direct Phone & WhatsApp">
+          <span class="text-white/30">•</span>
+          <a href="tel:+918928744136" id="top-direct-link" class="hover:text-cobalt-tint transition-colors flex items-center gap-1 shrink-0" title="Direct Phone & WhatsApp">
             <span class="material-symbols-outlined text-sm">call</span>
-            <span>Direct: <strong id="top-direct-num">89287 44136</strong></span>
+            <span class="whitespace-nowrap">Direct: <strong id="top-direct-num">89287 44136</strong></span>
           </a>
-          <span>•</span>
-          <a href="https://instagram.com/evolution_fitness_pune" target="_blank" rel="noopener noreferrer" class="hover:text-cobalt-tint transition-colors flex items-center gap-1.5 group">
+          <span class="hidden lg:inline text-white/30">•</span>
+          <a href="https://instagram.com/evolution_fitness_pune" target="_blank" rel="noopener noreferrer" class="hidden lg:flex hover:text-cobalt-tint transition-colors items-center gap-1.5 shrink-0 group" title="Follow us on Instagram">
             <svg class="w-4 h-4 shrink-0 rounded-xs" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="ig-top-grad" x1="100%" y1="0%" x2="0%" y2="100%">
@@ -186,10 +190,10 @@
               <rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#ig-top-grad)"/>
               <path d="M12 7C9.24 7 7 9.24 7 12C7 14.76 9.24 17 12 17C14.76 17 17 14.76 17 12C17 9.24 14.76 7 12 7ZM12 15.2C10.23 15.2 8.8 13.77 8.8 12C8.8 10.23 10.23 8.8 12 8.8C13.77 8.8 15.2 10.23 15.2 12C15.2 13.77 13.77 15.2 12 15.2ZM17.2 7.8C17.2 8.35 16.75 8.8 16.2 8.8C15.65 8.8 15.2 8.35 15.2 7.8C15.2 7.25 15.65 6.8 16.2 6.8C16.75 6.8 17.2 7.25 17.2 7.8Z" fill="#FFFFFF"/>
             </svg>
-            <span>@evolution_fitness_pune</span>
+            <span class="hidden 2xl:inline">@evolution_fitness_pune</span>
           </a>
-          <span>•</span>
-          <a href="https://share.google/2u4MYM5YeBA0cTcPw" target="_blank" rel="noopener noreferrer" class="hover:text-cobalt-tint transition-colors flex items-center gap-1.5 group">
+          <span class="hidden lg:inline text-white/30">•</span>
+          <a href="https://share.google/2u4MYM5YeBA0cTcPw" target="_blank" rel="noopener noreferrer" class="hidden lg:flex hover:text-cobalt-tint transition-colors items-center gap-1.5 shrink-0 group" title="Get Directions on Google Maps">
             <svg class="w-4 h-4 shrink-0 drop-shadow-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="#EA4335"/>
               <path d="M12 2C10.14 2 8.44 2.73 7.17 3.93L12 9.25L16.83 3.93C15.56 2.73 13.86 2 12 2Z" fill="#D93025"/>
@@ -199,7 +203,7 @@
               <circle cx="12" cy="9" r="3" fill="#FFFFFF"/>
               <circle cx="12" cy="9" r="2" fill="#1A73E8"/>
             </svg>
-            <span>Google Maps</span>
+            <span class="hidden 2xl:inline">Google Maps</span>
           </a>
         </div>
       </div>
@@ -1515,6 +1519,7 @@
           topBar.classList.remove('hidden');
           if (announcementMsg && s.announcement_text) {
             announcementMsg.textContent = s.announcement_text;
+            announcementMsg.title = s.announcement_text;
           }
         }
 
