@@ -1429,7 +1429,7 @@
           } catch(e) {}
 
           // 1. Send live inquiry to connected Google Sheet
-          const sheetWebhookUrl = (window.evoActiveSettings && window.evoActiveSettings.google_sheet_leads_url) || 'https://script.google.com/macros/s/AKfycbyy3h9HkvzpYNmsMzpbFqJ91fIdqv_J1gy8LVGSDBQD9nBOnBr9uePq6QxJFOuBNqWk/exec';
+          const sheetWebhookUrl = (window.evoActiveSettings && window.evoActiveSettings.google_sheet_leads_url) || 'https://script.google.com/macros/s/AKfycbx9d6L_5WH8mSTDAnR2O6TyYCfC2_RavqDgWdmFGqRVxe1buJo7bq8b_WAxdQPUWWqzBw/exec';
           if (sheetWebhookUrl) {
             fetch(sheetWebhookUrl, {
               method: 'POST',
