@@ -24,13 +24,13 @@
     "reception_phone": "+91 93707 37887",
     "announcement_active": "true",
     "announcement_text": "🎉 Festive Fitness Special: 20% OFF on Annual VIP Memberships this Week! HEY",
-    "starter_plan_price": "5499",
+    "starter_plan_price": "2449",
     "starter_plan_period": "month",
-    "momentum_plan_price": "5999",
+    "momentum_plan_price": "5499",
     "momentum_plan_period": "3 months",
-    "vip_plan_price": "8,999",
+    "vip_plan_price": "8,449",
     "vip_plan_period": "year",
     "google_sheet_leads_url": "https://script.google.com/macros/s/AKfycbyy3h9HkvzpYNmsMzpbFqJ91fIdqv_J1gy8LVGSDBQD9nBOnBr9uePq6QxJFOuBNqWk/exec"
   },
-  "updated_at": "2026-11-26T13:38:38.952Z"
+  "updated_at": "2026-11-26T13:39:56.992Z"
 }
