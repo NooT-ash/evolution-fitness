@@ -173,6 +173,10 @@
           </div>
 
           <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+            <span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Google Sheets Synced
+            </span>
             <button id="refresh-leads-btn" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs px-3 py-2 rounded-lg border border-slate-700 font-bold flex items-center gap-1 transition-colors">
               <span class="material-symbols-outlined text-sm">sync</span>
               <span>Refresh</span>
@@ -639,6 +643,50 @@
               <div id="gh-sync-banner" class="hidden p-3 rounded-lg text-xs font-semibold flex items-center gap-2 border"></div>
             </form>
           </div>
+
+          <!-- Google Sheets Leads CRM Integration -->
+          <div class="col-span-full bg-slate-900 border border-emerald-500/30 rounded-xl p-6 flex flex-col gap-5 relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-emerald-600/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="flex items-start gap-3.5">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center shrink-0 text-white">
+                  <span class="material-symbols-outlined text-2xl text-emerald-400">table_chart</span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2.5">
+                    <h3 class="text-base font-extrabold uppercase tracking-wide text-white">
+                      Google Sheets Leads CRM Integration
+                    </h3>
+                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1.5">
+                      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                      <span>Connected &amp; Active</span>
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">
+                    Website inquiries from trial pass bookings automatically save directly into your private Google Sheet and sync across every phone, laptop, and browser!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <form id="google-sheet-form" class="bg-slate-950/70 border border-slate-800 rounded-lg p-4 flex flex-col gap-3">
+              <div class="flex flex-col gap-1">
+                <label class="text-xs text-slate-400 font-bold uppercase flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs text-emerald-400">link</span>
+                  <span>Google Apps Script Web App URL</span>
+                </label>
+                <div class="flex flex-col sm:flex-row items-center gap-2">
+                  <input type="url" id="setting-google-sheet-url" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-white font-mono placeholder:text-slate-600 focus:border-emerald-500 outline-none" value="https://script.google.com/macros/s/AKfycbyy3h9HkvzpYNmsMzpbFqJ91fIdqv_J1gy8LVGSDBQD9nBOnBr9uePq6QxJFOuBNqWk/exec">
+                  <button type="submit" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg flex items-center justify-center gap-1.5 shrink-0 transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-sm">save</span>
+                    <span>Save URL</span>
+                  </button>
+                </div>
+                <span class="text-[10px] text-slate-500">Connected to your Google Drive spreadsheet. Deleting or updating leads in the CMS permanently synchronizes with your Google Sheet in real time.</span>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
 
@@ -812,7 +860,39 @@
       });
 
       // ----------------- LEADS MANAGEMENT -----------------
+      function getGoogleSheetLeadsUrl() {
+        if (window.evoActiveSettings && window.evoActiveSettings.google_sheet_leads_url) {
+          return window.evoActiveSettings.google_sheet_leads_url.trim();
+        }
+        const local = localStorage.getItem('evo_vpm_settings');
+        if (local) {
+          try {
+            const parsed = JSON.parse(local);
+            if (parsed.google_sheet_leads_url) return parsed.google_sheet_leads_url.trim();
+          } catch(e) {}
+        }
+        return 'https://script.google.com/macros/s/AKfycbyy3h9HkvzpYNmsMzpbFqJ91fIdqv_J1gy8LVGSDBQD9nBOnBr9uePq6QxJFOuBNqWk/exec';
+      }
+
       async function loadLeads() {
+        const sheetUrl = getGoogleSheetLeadsUrl();
+        if (sheetUrl) {
+          try {
+            const res = await fetch(sheetUrl);
+            if (res.ok) {
+              const data = await res.json();
+              if (data && Array.isArray(data.leads)) {
+                leadsCache = data.leads;
+                localStorage.setItem('evo_gym_leads', JSON.stringify(leadsCache));
+                renderLeads();
+                return;
+              }
+            }
+          } catch (err) {
+            console.warn('Google Sheet fetch error, falling back to local storage:', err);
+          }
+        }
+
         try {
           const res = await fetch('/api/leads', {
             headers: { 'Authorization': `Bearer ${authToken}` }
@@ -825,18 +905,14 @@
           }
         } catch (err) {}
 
-        // Netlify & Static fallback
+        // Netlify & Static fallback (starts clean and empty, no fake mock leads!)
         const local = localStorage.getItem('evo_gym_leads');
         if (local) {
           try {
             leadsCache = JSON.parse(local);
           } catch(e) { leadsCache = []; }
         } else {
-          leadsCache = [
-            { id: 1, created_at: '2026-11-25 10:15', name: 'Amit Deshmukh', phone: '98220 12345', service: '1-on-1 Personal Training', notes: 'Interested in evening slot with Manoj Sir', status: 'Trial Scheduled', admin_notes: 'Trial confirmed for Tuesday 7 PM' },
-            { id: 2, created_at: '2026-11-25 09:30', name: 'Sneha Kulkarni', phone: '98901 67890', service: 'Zumba & Yoga', notes: 'Wants morning 8 AM Zumba batch details', status: 'Contacted', admin_notes: 'Shared batch schedule on WhatsApp' },
-            { id: 3, created_at: '2026-11-25 08:45', name: 'Vikram Salunkhe', phone: '99705 43210', service: 'Strength & Muscle Gain', notes: 'College student nearby, asking for student discount', status: 'New', admin_notes: '' }
-          ];
+          leadsCache = [];
           localStorage.setItem('evo_gym_leads', JSON.stringify(leadsCache));
         }
         renderLeads();
@@ -938,6 +1014,37 @@
       }
 
       async function updateLead(id, payload) {
+        // 1. Update in local memory & storage immediately
+        const lead = leadsCache.find(l => String(l.id) === String(id));
+        if (lead) {
+          if (payload.status !== undefined) lead.status = payload.status;
+          if (payload.admin_notes !== undefined) lead.admin_notes = payload.admin_notes;
+          localStorage.setItem('evo_gym_leads', JSON.stringify(leadsCache));
+          renderLeads();
+        }
+
+        // 2. Sync to connected Google Sheet
+        const sheetUrl = getGoogleSheetLeadsUrl();
+        if (sheetUrl) {
+          try {
+            await fetch(sheetUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify({
+                action: 'update',
+                id: id,
+                status: payload.status,
+                admin_notes: payload.admin_notes
+              })
+            });
+            showToast('Lead updated (Synced to Google Sheet)');
+            return;
+          } catch(e) {
+            console.error('Google sheet update error:', e);
+          }
+        }
+
+        // 3. Fallback to API backend if available
         try {
           const res = await fetch(`/api/leads/${id}`, {
             method: 'PATCH',
@@ -949,23 +1056,32 @@
           });
           if (res.ok) {
             showToast('Lead updated');
-            loadLeads();
             return;
           }
         } catch (err) {}
 
-        // Netlify local fallback
-        const lead = leadsCache.find(l => String(l.id) === String(id));
-        if (lead) {
-          if (payload.status !== undefined) lead.status = payload.status;
-          if (payload.admin_notes !== undefined) lead.admin_notes = payload.admin_notes;
-          localStorage.setItem('evo_gym_leads', JSON.stringify(leadsCache));
-          showToast('Lead updated (Saved locally)');
-          renderLeads();
-        }
+        showToast('Lead updated');
       }
 
       async function deleteLead(id) {
+        // 1. Remove from local memory & storage immediately
+        leadsCache = leadsCache.filter(l => String(l.id) !== String(id));
+        localStorage.setItem('evo_gym_leads', JSON.stringify(leadsCache));
+        renderLeads();
+
+        // 2. Permanently delete from connected Google Sheet
+        const sheetUrl = getGoogleSheetLeadsUrl();
+        if (sheetUrl) {
+          try {
+            await fetch(`${sheetUrl}?action=delete&id=${encodeURIComponent(id)}`);
+            showToast('Lead permanently deleted from Google Sheet');
+            return;
+          } catch(e) {
+            console.error('Google sheet delete error:', e);
+          }
+        }
+
+        // 3. Fallback to API backend if available
         try {
           const res = await fetch(`/api/leads/${id}`, {
             method: 'DELETE',
@@ -973,16 +1089,11 @@
           });
           if (res.ok) {
             showToast('Lead deleted');
-            loadLeads();
             return;
           }
         } catch (err) {}
 
-        // Netlify local fallback
-        leadsCache = leadsCache.filter(l => String(l.id) !== String(id));
-        localStorage.setItem('evo_gym_leads', JSON.stringify(leadsCache));
         showToast('Lead deleted');
-        renderLeads();
       }
 
       function exportLeadsClientCsv() {
@@ -1233,6 +1344,9 @@
 
         const cloudApiInput = document.getElementById('setting-cloud-api');
         if (cloudApiInput) cloudApiInput.value = localStorage.getItem('evo_cloud_api_url') || '';
+
+        const gsInput = document.getElementById('setting-google-sheet-url');
+        if (gsInput) gsInput.value = s.google_sheet_leads_url || 'https://script.google.com/macros/s/AKfycbyy3h9HkvzpYNmsMzpbFqJ91fIdqv_J1gy8LVGSDBQD9nBOnBr9uePq6QxJFOuBNqWk/exec';
       }
 
       async function saveSettings(payload) {
@@ -1346,6 +1460,17 @@
       if (btnExpTab5) {
         btnExpTab5.addEventListener('click', () => {
           exportSettingsJson();
+        });
+      }
+
+      // Google Sheet Leads CRM Form Handler
+      const gsForm = document.getElementById('google-sheet-form');
+      if (gsForm) {
+        gsForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const url = document.getElementById('setting-google-sheet-url').value.trim();
+          await saveSettings({ google_sheet_leads_url: url });
+          showToast('Google Sheet Webhook URL saved & synced to GitHub');
         });
       }
 

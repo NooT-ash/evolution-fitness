@@ -29,7 +29,8 @@
     "momentum_plan_price": "5999",
     "momentum_plan_period": "3 months",
     "vip_plan_price": "7,999",
-    "vip_plan_period": "year"
+    "vip_plan_period": "year",
+    "google_sheet_leads_url": "https://script.google.com/macros/s/AKfycbyy3h9HkvzpYNmsMzpbFqJ91fIdqv_J1gy8LVGSDBQD9nBOnBr9uePq6QxJFOuBNqWk/exec"
   },
   "updated_at": "2026-11-26T08:54:18.435Z"
 }

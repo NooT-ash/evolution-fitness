@@ -1428,6 +1428,22 @@
             localStorage.setItem('evo_gym_leads', JSON.stringify(existingLeads));
           } catch(e) {}
 
+          // 1. Send live inquiry to connected Google Sheet
+          const sheetWebhookUrl = (window.evoActiveSettings && window.evoActiveSettings.google_sheet_leads_url) || 'https://script.google.com/macros/s/AKfycbyy3h9HkvzpYNmsMzpbFqJ91fIdqv_J1gy8LVGSDBQD9nBOnBr9uePq6QxJFOuBNqWk/exec';
+          if (sheetWebhookUrl) {
+            fetch(sheetWebhookUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify({
+                name: name,
+                phone: phone,
+                service: selectedService,
+                notes: notes
+              })
+            }).catch(e => console.log('Google sheet sync attempt recorded'));
+          }
+
+          // 2. Fallback to API if available
           fetch('/api/leads', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1437,7 +1453,7 @@
               service: selectedService,
               notes: notes
             })
-          }).catch(err => console.log('Lead stored locally'));
+          }).catch(err => {});
 
           statusText.innerHTML = `Thank you <strong>${name}</strong>! Your trial pass request has been recorded. Redirecting you to WhatsApp to confirm your slot with Manoj Sir...`;
           statusBox.classList.remove('hidden');
