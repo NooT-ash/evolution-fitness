@@ -163,7 +163,7 @@
         <!-- Left: Announcement Message -->
         <div class="flex items-center gap-2 min-w-0 flex-1 justify-center sm:justify-start">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-          <span id="top-announcement-text" class="truncate font-medium text-xs text-white" title="Open 7 Days a Week: 6:00 AM – 10:00 PM | Dhanori-Lohegaon Rd (Nr HP Petrol Pump)">Open 7 Days a Week: <strong>6:00 AM – 10:00 PM</strong> | Dhanori-Lohegaon Rd (Nr HP Petrol Pump)</span>
+          <span id="top-announcement-text" class="line-clamp-2 sm:line-clamp-none sm:truncate font-medium text-[11px] sm:text-xs text-white text-center sm:text-left leading-snug" title="Open 7 Days a Week: 6:00 AM – 10:00 PM | Dhanori-Lohegaon Rd (Nr HP Petrol Pump)">Open 7 Days a Week: <strong>6:00 AM – 10:00 PM</strong> | Dhanori-Lohegaon Rd (Nr HP Petrol Pump)</span>
         </div>
 
         <!-- Right: Contact & Quick Links -->
@@ -1487,10 +1487,10 @@
           }
         } catch (e) {}
 
-        // 2. Fallback to static data/settings.json if API is unavailable (e.g. Netlify static hosting)
+        // 2. Fallback to static data/settings.json with cache-busting timestamp & no-store
         if (Object.keys(s).length === 0) {
           try {
-            const res = await fetch('data/settings.json');
+            const res = await fetch('data/settings.json?v=' + Date.now(), { cache: 'no-store' });
             if (res.ok) {
               const data = await res.json();
               s = data.settings || {};
@@ -1498,12 +1498,15 @@
           } catch (e) {}
         }
 
-        // 3. Overlay latest local edits from CMS (never wipe them out, ensure immediate persistence)
+        // 3. Fallback to local CMS cache only if server data could not be loaded
+        // (Ensures data/settings.json deployed to Netlify is the authoritative single source of truth across all devices)
         try {
-          const local = localStorage.getItem('evo_vpm_settings');
-          if (local) {
-            const parsed = JSON.parse(local);
-            s = { ...s, ...parsed };
+          if (Object.keys(s).length === 0) {
+            const local = localStorage.getItem('evo_vpm_settings');
+            if (local) {
+              const parsed = JSON.parse(local);
+              s = { ...s, ...parsed };
+            }
           }
         } catch (e) {}
 
